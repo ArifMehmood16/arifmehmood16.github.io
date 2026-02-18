@@ -7,11 +7,11 @@ const experiences = [
     company: "BioCare / Aston University",
     period: "Jan 2026 — Present",
     bullets: [
-      "Leading AI-driven health recommendation system integrating personalised nutrition with NLP-based customer insights",
-      "Designing RAG pipelines and LLM-powered tools for internal knowledge management",
-      "Collaborating across academic and commercial teams to translate research into deployable products",
+      "Building a personalised healthcare product from the ground up using machine learning and generative AI",
+      "Owning full-lifecycle delivery: infrastructure design, system architecture, development, testing, and production support",
+      "Ensuring GDPR, AI governance, and regulatory alignment while collaborating with technical and business stakeholders",
     ],
-    tech: ["Python", "RAG", "LLMs", "AWS", "FastAPI", "PostgreSQL"],
+    tech: ["Python", "LLMs", "AWS", "FastAPI", "PostgreSQL", "GDPR", "AI Governance"],
   },
   {
     title: "Software Engineer",

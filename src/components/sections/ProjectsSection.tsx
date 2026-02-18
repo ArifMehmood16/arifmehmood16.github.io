@@ -4,34 +4,32 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "MetaphorShare",
-    description: "NLP research platform enabling metaphor discovery and sharing through LLaMA 2 integration with RAG-based retrieval and prompt engineering pipelines.",
-    tech: ["LLaMA 2", "RAG", "React", "Spring Boot", "PostgreSQL", "Docker"],
+    title: "MetaphorShare: Cardiff University NLP",
+    description:
+      "A web application designed for NLP metaphor researchers to share and collaborate on datasets, with a built-in tool for labelling datasets efficiently.",
+    tech: ["NLP", "React", "Spring Boot", "PostgreSQL", "Dataset Labelling"],
+    link: "https://www.metaphorshare.com/",
   },
   {
-    title: "SevRes — Severe Weather ETL",
-    description: "AWS event-driven ETL platform processing severe weather research data with automated ingestion, OpenSearch indexing, and Kibana dashboards.",
-    tech: ["AWS Lambda", "S3", "OpenSearch", "Kibana", "Python", "Terraform"],
+    title: "Trafred",
+    description:
+      "Tool developed for the Welsh Government Transport Department, providing transport reporting based on a data model designed by Cardiff University academics and funded by the Green Alliance Project.",
+    tech: ["Transport Reporting", "Data Modelling", "React", "Spring Boot"],
+    link: "https://trafred.cardiff.ac.uk/",
   },
   {
-    title: "GenAI Assistant",
-    description: "Generative AI RAG web application using FastAPI and locally-hosted LLMs via Ollama for secure document Q&A without third-party API dependencies.",
-    tech: ["FastAPI", "Ollama", "RAG", "React", "Python", "Docker"],
+    title: "SevRes 5",
+    description:
+      "A full-stack ETL solution with a ReactJS frontend for data submission and reporting, and an AWS-powered backend including Lambda, API Gateway, Elasticsearch, and more.",
+    tech: ["React", "AWS Lambda", "API Gateway", "Elasticsearch", "ETL"],
+    link: "https://sevres.co.uk/",
   },
   {
-    title: "Lead Scoring System",
-    description: "ML-powered lead scoring for insurance vertical using ensemble models (GLM, XGBoost, Random Forest) with automated validation pipelines.",
-    tech: ["Python", "Scikit-learn", "XGBoost", "SQL", "Pandas"],
-  },
-  {
-    title: "FinTech Microservices Migration",
-    description: "Led migration from monolithic architecture to Spring Cloud microservices, achieving 99.99% uptime with Kafka event streaming and CI/CD automation.",
-    tech: ["Spring Cloud", "Kafka", "Docker", "PostgreSQL", "CI/CD"],
-  },
-  {
-    title: "Health Recommendation System",
-    description: "AI-powered personalised health and nutrition recommendation platform at BioCare, integrating NLP-based customer insights with product knowledge graphs.",
-    tech: ["Python", "RAG", "LLMs", "AWS", "FastAPI", "PostgreSQL"],
+    title: "SecMoF (GitHub)",
+    description:
+      "An open-source dependency modelling tool for cybersecurity professionals, used to model systems and precautionary measures with playbooks and dependency models. Actively used in the MSc Cyber Security programme at Cardiff University.",
+    tech: ["Cybersecurity", "Dependency Modelling", "Playbooks", "Open Source"],
+    link: "https://github.com/CardiffUniCOMSC/SecMoF",
   },
 ];
 
@@ -62,10 +60,23 @@ const ProjectsSection = () => {
               className="glass rounded-xl p-6 group hover:border-primary/30 transition-colors"
             >
               <div className="flex items-start justify-between mb-3">
-                <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-semibold group-hover:text-primary transition-colors hover:text-primary"
+                >
                   {project.title}
-                </h3>
-                <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
+                </a>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${project.title}`}
+                  className="text-muted-foreground opacity-80 group-hover:opacity-100 hover:text-primary transition-colors shrink-0 mt-1"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                </a>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                 {project.description}
@@ -77,6 +88,14 @@ const ProjectsSection = () => {
                   </Badge>
                 ))}
               </div>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center text-xs text-primary hover:underline"
+              >
+                Visit project <ExternalLink className="ml-1 h-3.5 w-3.5" />
+              </a>
             </motion.div>
           ))}
         </div>

@@ -40,7 +40,7 @@ const AboutSection = () => {
                 Turning Research Into <span className="text-gradient">Production Systems</span>
               </h2>
               <p className="max-w-3xl text-muted-foreground text-base md:text-lg leading-relaxed">
-                I'm an AI & Cloud Engineer with 6+ years of experience shipping software that matters. Currently a Knowledge Transfer Partnership (KTP) Associate at BioCare and Aston University, I bridge academic AI research and commercial product delivery. My work spans building RAG-powered generative AI systems, architecting AWS cloud platforms, and modernising legacy monoliths into resilient microservices — across fintech, health-tech, higher education, and retail domains.
+                AI Software Engineer focused on taking ideas from concept to production and supporting them at scale. I am currently building a personalised healthcare product from the ground up, combining machine learning and generative AI to deliver real-world impact. My work spans infrastructure design, architecture, development, testing, and governance, including GDPR and responsible AI compliance.
               </p>
             </div>
           </div>
