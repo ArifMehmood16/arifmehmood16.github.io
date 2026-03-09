@@ -3,15 +3,8 @@ import { BadgeCheck } from "lucide-react";
 
 const recommendations = [
   {
-    name: "Beth Allender",
-    role: "National Programme Manager",
-    date: "March 1, 2026",
-    company: "Cardiff University",
-    relationship: "Managed Arif directly",
-    text: "Arif was a pleasure to work with supporting with turning our quite vague dashboard requirements into a shiny technical reality. He did a great job setting this up on the AWS stack, worked well with a very small project team wearing a few different hats, and providing flexibility with the project approach and a lot of troubleshooting along the way. This is fast becoming a sector leading product, receiving excellent feedback from users.",
-  },
-  {
     name: "Angharad Watson",
+    profileUrl: "https://www.linkedin.com/in/angharad-watson-52671883/",
     role: "Center Manager",
     date: "March 6, 2026",
     company: "DTII Cardiff University",
@@ -19,7 +12,17 @@ const recommendations = [
     text: "Arif was a valuable member of my team at the Digital Transformation Innovation Institute. He is proactive and independent, with a postive attitude and great team spirit. He completed full stack development for key projects, and worked closely with our Senior Data Scientist on AI and data science projects. He is adept at managing his time, and has succesfully worked across a range of projects with competing timescales. He also worked well with external partners, leading scoping conversations and designing clear workpackages.",
   },
   {
+    name: "Beth Allender",
+    profileUrl: "https://www.linkedin.com/in/beth-allender-13215b24/",
+    role: "National Programme Manager",
+    date: "March 1, 2026",
+    company: "Cardiff University",
+    relationship: "Managed Arif directly",
+    text: "Arif was a pleasure to work with supporting with turning our quite vague dashboard requirements into a shiny technical reality. He did a great job setting this up on the AWS stack, worked well with a very small project team wearing a few different hats, and providing flexibility with the project approach and a lot of troubleshooting along the way. This is fast becoming a sector leading product, receiving excellent feedback from users.",
+  },
+  {
     name: "Joel Simpson",
+    profileUrl: "https://www.linkedin.com/in/joel-simpson-576a6926/",
     role: "Business Analyst (contract)",
     date: "April 7, 2025",
     company: "CU DTII / National SevRes dashboard collaboration",
@@ -28,6 +31,7 @@ const recommendations = [
   },
   {
     name: "Joanne Boisson",
+    profileUrl: "https://www.linkedin.com/in/joanne-boisson-b5b2638b/",
     role: "PhD Student in Natural Language Processing",
     date: "March 19, 2025",
     company: "Cardiff University / MetaphorShare",
@@ -36,6 +40,7 @@ const recommendations = [
   },
   {
     name: "Vijay Babu",
+    profileUrl: "https://www.linkedin.com/in/vijay-babu-bba4b2132/",
     role: "Senior Java Consultant",
     date: "March 31, 2022",
     company: "PCMS Ltd (now Flooid)",
@@ -44,6 +49,7 @@ const recommendations = [
   },
   {
     name: "Irshad Ahmad",
+    profileUrl: "https://www.linkedin.com/in/irshadahmad046/",
     role: "Building financial applications that works like a charm",
     date: "March 14, 2022",
     company: "Confiz",
@@ -52,6 +58,7 @@ const recommendations = [
   },
   {
     name: "Mark Earl",
+    profileUrl: "https://www.linkedin.com/in/mark-earl-823a2a3/",
     role: "Agile Software Delivery Manager",
     date: "March 3, 2022",
     company: "PCMS Ltd (now Flooid)",
@@ -91,7 +98,18 @@ const RecommendationsSection = () => {
               <div className="flex items-start justify-between gap-3 mb-3">
                 <div>
                   <h3 className="text-lg font-semibold flex items-center gap-2">
-                    {item.name}
+                    {item.profileUrl ? (
+                      <a
+                        href={item.profileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary hover:underline transition-colors"
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <span>{item.name}</span>
+                    )}
                     <BadgeCheck className="h-4 w-4 text-primary" />
                   </h3>
                   <p className="text-sm text-muted-foreground">{item.role}</p>
