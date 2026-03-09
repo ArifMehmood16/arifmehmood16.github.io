@@ -3,6 +3,22 @@ import { BadgeCheck } from "lucide-react";
 
 const recommendations = [
   {
+    name: "Beth Allender",
+    role: "National Programme Manager",
+    date: "March 1, 2026",
+    company: "Cardiff University",
+    relationship: "Managed Arif directly",
+    text: "Arif was a pleasure to work with supporting with turning our quite vague dashboard requirements into a shiny technical reality. He did a great job setting this up on the AWS stack, worked well with a very small project team wearing a few different hats, and providing flexibility with the project approach and a lot of troubleshooting along the way. This is fast becoming a sector leading product, receiving excellent feedback from users.",
+  },
+  {
+    name: "Angharad Watson",
+    role: "Center Manager",
+    date: "March 6, 2026",
+    company: "DTII Cardiff University",
+    relationship: "Managed Arif directly",
+    text: "Arif was a valuable member of my team at the Digital Transformation Innovation Institute. He is proactive and independent, with a postive attitude and great team spirit. He completed full stack development for key projects, and worked closely with our Senior Data Scientist on AI and data science projects. He is adept at managing his time, and has succesfully worked across a range of projects with competing timescales. He also worked well with external partners, leading scoping conversations and designing clear workpackages.",
+  },
+  {
     name: "Joel Simpson",
     role: "Business Analyst (contract)",
     date: "April 7, 2025",
