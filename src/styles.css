@@ -1,0 +1,207 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-firm: var(--border-firm);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --color-accent-2: var(--accent-2);
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -20px rgb(0 0 0 / 0.7);
+  --shadow-lift: 0 2px 6px rgb(0 0 0 / 0.5), 0 24px 56px -28px rgb(0 0 0 / 0.9);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.168 0.016 245);
+  --foreground: oklch(0.945 0.006 240);
+  --card: oklch(0.213 0.017 245);
+  --card-foreground: oklch(0.945 0.006 240);
+  --popover: oklch(0.213 0.017 245);
+  --popover-foreground: oklch(0.945 0.006 240);
+  --primary: oklch(0.7 0.135 231);
+  --primary-foreground: oklch(0.16 0.018 245);
+  --secondary: oklch(0.256 0.017 245);
+  --secondary-foreground: oklch(0.945 0.006 240);
+  --muted: oklch(0.256 0.017 245);
+  --muted-foreground: oklch(0.73 0.016 240);
+  --faint: oklch(0.598 0.017 243);
+  --accent: oklch(0.7 0.135 231);
+  --accent-2: oklch(0.775 0.107 186);
+  --accent-foreground: oklch(0.16 0.018 245);
+  --accent-soft: oklch(0.31 0.055 228);
+  --destructive: oklch(0.63 0.17 28);
+  --destructive-foreground: oklch(0.16 0.018 245);
+  --border: oklch(0.3 0.014 243);
+  --border-firm: oklch(0.39 0.017 243);
+  --input: oklch(0.3 0.014 243);
+  --ring: oklch(0.7 0.135 231);
+  --gradient-name: linear-gradient(
+    100deg,
+    oklch(0.98 0.005 240) 0%,
+    oklch(0.98 0.005 240) 32%,
+    var(--accent) 55%,
+    var(--accent-2) 90%
+  );
+  --glow: radial-gradient(
+    60% 55% at 20% 0%,
+    color-mix(in oklab, var(--accent) 16%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  strong,
+  b {
+    font-weight: 600;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-foreground);
+  }
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+@utility rule-top {
+  border-top: 1px solid var(--color-border);
+}
+
+@utility surface-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+@utility chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+  padding: 0.32rem 0.55rem;
+  border-radius: 0.25rem;
+  background: var(--color-secondary);
+  color: var(--color-muted-foreground);
+  border: 1px solid var(--color-border);
+}
+
+@utility chip-accent {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+  padding: 0.32rem 0.55rem;
+  border-radius: 0.25rem;
+  background: color-mix(in oklab, var(--color-accent) 18%, transparent);
+  color: oklch(0.86 0.086 222);
+  border: 1px solid color-mix(in oklab, var(--color-accent) 30%, transparent);
+}
+
+
+@utility gradient-name {
+  background-image: var(--gradient-name);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility hero-glow {
+  background-image: var(--glow);
+}
+
+@utility card-hover {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    border-color: color-mix(in oklab, var(--color-accent) 45%, transparent);
+    box-shadow: var(--shadow-lift);
+    transform: translateY(-2px);
+  }
+}
