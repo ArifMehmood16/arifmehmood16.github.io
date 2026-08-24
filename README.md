@@ -1,6 +1,8 @@
 # Arif Mehmood
 
-Personal site of Arif Mehmood, AI engineer. Live at [arifmehmood16.github.io](https://arifmehmood16.github.io).
+**Live website:** [https://arifmehmood16.github.io](https://arifmehmood16.github.io)
+
+This GitHub repository is the source code. Opening the repo in the GitHub app or on github.com shows this README, not the site.
 
 ## Development
 
